@@ -29,10 +29,14 @@ def add_project():
 
 @app.route("/edit/<int:project_id>", methods=["POST"])
 def edit_project(project_id):
-    for project in projects:
-        if project["id"] == project_id:
-            project["status"] = request.form.get("status", project["status"])
-            break
+    allowed_statuses = ["대기", "진행 중", "완료"]
+    new_status = request.form.get("status", "")
+
+    if new_status in allowed_statuses:
+        for project in projects:
+            if project["id"] == project_id:
+                project["status"] = new_status
+                break
 
     return redirect(url_for("index"))
 

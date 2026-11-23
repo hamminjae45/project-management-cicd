@@ -36,9 +36,9 @@
                     <div class="actions">
                         <form action="/edit/{{ project.id }}" method="POST">
                             <select name="status">
-                                <option value="대기">대기</option>
-                                <option value="진행 중">진행 중</option>
-                                <option value="완료">완료</option>
+                                <option value="대기" {% if project.status == "대기" %}selected{% endif %}>대기</option>
+                                <option value="진행 중" {% if project.status == "진행 중" %}selected{% endif %}>진행 중</option>
+                                <option value="완료" {% if project.status == "완료" %}selected{% endif %}>완료</option>
                             </select>
                             <button type="submit">상태 변경</button>
                         </form>
