@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: project-management
-          image: ham0925/project-management-cicd:03698b54325e47d6bf8fa64b7374b667f9760d53
+          image: ham0925/project-management-cicd:9db05b8b9461b01513df5c484b69bd4a2535aa5b
           imagePullPolicy: Always
           ports:
             - containerPort: 5000
